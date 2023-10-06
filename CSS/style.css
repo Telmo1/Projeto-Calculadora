@@ -3,6 +3,32 @@
     padding: 0;
 }
 
+.container{
+   background-image: linear-gradient(to bottom right, rgb(148 88 222), rgb(255 150 106));
+}
+
+#resultado{
+    height: 100%;
+}
+
 .row{
     height: 60px;
+}
+
+.botao{
+    height: 3rem;
+    width: 3rem;
+    border: none;
+}
+
+#btnColorOne{
+    background-color: rgb(245 225 253);
+}
+
+#btnColorTwo{
+    background-color: rgb(247 207 98);
+}
+
+#btnColorTree{
+    background-color: rgb(237 237 255);
 }
