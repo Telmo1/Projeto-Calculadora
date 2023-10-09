@@ -10,45 +10,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container" style="height: 100vh;">
-        <div class="container-calculadora bg-light position-absolute top-50 start-50 translate-middle  rounded">
-            <div class="row">
-                <p id="resultado" class="d-flex flex-row-reverse align-items-center pe-4"></p>
-            </div>
-            <div class="table m-auto">
-                    <table>
-                        <tr>          
-                            <td class="border"><button type="button" class="botao" id="btnColorOne" onclick="clean()">C</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorOne" onclick="back()">></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorOne" onclick="insert('%')">%</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTwo" onclick="insert('/')">/</button></td>            
+    <div class="container-fluid" style="height: 100vh;">
+
+                    <table class="table position-absolute top-50 start-50 translate-middle m-0" style="width: 40vh; height: 30vw; ">
+                        <tr>
+                            <td colspan="4" class="table-active border border-dark bg-light p-0"><p id="resultado" class="d-flex flex-row-reverse align-items-center pe-3" style="width: 100%; height: 100%;"></p> </td>
                         </tr>
                         <tr>          
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('7')">7</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('8')">8</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('9')">9</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTwo" onclick="insert('*')">X</button></td>            
+                            <td class="border border-dark p-0" ><button type="button" class="botao" id="btnColorOne" onclick="limparVisor()">C</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorOne" onclick="removerUltimoCaractere()">></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorOne" onclick="adicionarAoVisor('%')">%</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTwo" onclick="adicionarAoVisor('/')">/</button></td>            
                         </tr>
                         <tr>          
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('4')">4</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('5')">5</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('6')">6</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTwo" onclick="insert('-')">-</button></td>            
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('7')">7</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('8')">8</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('9')">9</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTwo" onclick="adicionarAoVisor('*')">X</button></td>            
                         </tr>
                         <tr>          
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('1')">1</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('2')">2</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert('3')">3</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTwo" onclick="insert('+')">+</button></td>            
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('4')">4</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('5')">5</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('6')">6</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTwo" onclick="adicionarAoVisor('-')">-</button></td>            
                         </tr>
                         <tr>          
-                            <td colspan="2" class="table-active border"><button type="button" class="botao" id="btnColorTree" onclick="insert('0')" style="width: 100%;">0</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTree" onclick="insert(',')">,</button></td>
-                            <td class="border"><button type="button" class="botao" id="btnColorTwo" onclick="calcular('=')">=</button></td>          
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('1')">1</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('2')">2</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('3')">3</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTwo" onclick="adicionarAoVisor('+')">+</button></td>            
+                        </tr>
+                        <tr>          
+                            <td colspan="2" class="table-active border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor('0')" style="width: 100%;">0</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTree" onclick="adicionarAoVisor(',')">,</button></td>
+                            <td class="border border-dark p-0"><button type="button" class="botao" id="btnColorTwo" onclick="calcularResultado('=')">=</button></td>          
                         </tr>        
-                    </table>
-                </div>   
-        </div>
+                    </table>          
     </div>
 </body>
 </html>
